@@ -12,8 +12,8 @@ Le projet est développé **de zéro** en HTML, CSS et JavaScript, et est **resp
 - Codé de zéro sans framework.
 
 ## Technologies utilisées
-- HTML5
-- CSS3
-- JavaScript (vanilla JS)
+- HTML:5
+- CSS
+- JavaScript 
 - Git & GitHub pour le versioning
 - GitHub Pages pour le déploiement
