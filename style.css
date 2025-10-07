@@ -1,0 +1,1160 @@
+/* --- Styles généraux --- */
+* {
+    box-sizing: border-box;
+    /* Définit le modèle de boîte : la bordure et le padding sont inclus dans la largeur/hauteur de l'élément */
+}
+
+body {
+    margin: 0;
+    /* Supprime la marge extérieure par défaut du body */
+    font-family: Arial, sans-serif;
+    /* Définit la police de caractères par défaut  */
+    color: white;
+    /* Définit la couleur du texte par défaut à blanc */
+    background-color: #040714;
+    /* Définit la couleur de fond du corps de la page (bleu très foncé) */
+    min-height: 100vh;
+    /* Assure que le corps occupe au moins 100% de la hauteur de la fenêtre (viewport height) */
+    position: relative;
+    /* Définit le contexte de positionnement pour les éléments enfants en position 'absolute' */
+}
+
+/* --- Section Page d'Accueil avec Image de Fond --- */
+.page-accueil {
+    background-image: url(img/original_2.jpeg);
+    /* Définit l'image de fond de la section */
+    background-size: cover;
+    /* Redimensionne l'image pour couvrir toute la zone de l'élément sans la déformer */
+    background-position: center;
+    /* Centre l'image de fond dans l'élément */
+    background-repeat: no-repeat;
+    /* Empêche la répétition de l'image de fond */
+    min-height: 100vh;
+    /* Assure que la section occupe au moins 100% de la hauteur de la fenêtre */
+    position: relative;
+    /* Définit le contexte de positionnement */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Couleur de fond (noir semi-transparent) */
+    background-blend-mode: multiply;
+    /* Mode de fusion pour assombrir l'image de fond avec la couleur de fond */
+}
+
+/* --- Header et Bouton S'IDENTIFIER --- */
+.header-identification {
+    position: absolute;
+    /* Positionne l'élément par rapport au parent positionné le plus proche (.page-accueil) */
+    top: 0;
+    /* Positionne à 0px du haut du parent */
+    left: 0;
+    /* Positionne à 0px de la gauche du parent */
+    right: 0;
+    /* Positionne à 0px de la droite du parent (s'étale sur toute la largeur) */
+    padding: 15px 20px;
+    /* Ajoute un espacement intérieur : 15px en haut/bas, 20px à gauche/droite */
+    display: flex;
+    /* Active le modèle de boîte flexible (Flexbox) */
+    justify-content: flex-end;
+    /* Aligne les éléments enfants à l'extrémité droite de l'axe principal */
+    align-items: center;
+    /* Centre les éléments enfants verticalement sur l'axe secondaire */
+    z-index: 10;
+    /* Définit l'ordre d'empilement (place l'élément au-dessus des autres) */
+}
+
+.btn-identification {
+    padding: 8px 20px;
+    /* Espacement intérieur du bouton */
+    border: 1px solid white;
+    /* Définit une bordure blanche de 1px */
+    border-radius: 4px;
+    /* Arrondit les coins du bouton */
+    color: white;
+    /* Couleur du texte du bouton */
+    background-color: black;
+    /* Couleur de fond du bouton */
+    text-decoration: none;
+    /* Supprime le soulignement par défaut des liens */
+    font-weight: 700;
+    /* Définit la graisse de la police (gras) */
+    font-size: 13px;
+    /* Définit la taille de la police */
+    letter-spacing: 1px;
+    /* Définit l'espacement entre les lettres */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    /* Anime en douceur les changements de couleur et de bordure sur 0.3 seconde */
+}
+
+.btn-identification:hover {
+    background-color: #ffffff;
+    /* Change la couleur de fond en blanc au survol */
+    color: rgb(0, 0, 0);
+    /* Change la couleur du texte en noir au survol */
+    border-color: white;
+    /* Maintient la bordure blanche au survol */
+}
+
+/* --- Section principale et Texte --- */
+.contenu-principal {
+    display: flex;
+    /* Active Flexbox */
+    justify-content: center;
+    /* Centre les éléments sur l'axe horizontal */
+    align-items: center;
+    /* Centre les éléments sur l'axe vertical */
+    min-height: 100vh;
+    /* Hauteur minimale de 100% de la fenêtre */
+    text-align: center;
+    /* Centre le texte à l'intérieur de l'élément */
+    position: relative;
+    /* Définit le contexte de positionnement */
+    padding: 0 20px;
+    /* Rembourrage horizontal */
+}
+
+.message-central {
+    max-width: 1200px;
+    /* Largeur maximale du bloc de message */
+    padding: 20px;
+    /* Rembourrage intérieur */
+    margin-top: 15%;
+    /* Marge supérieure (pour décaler le contenu vers le bas) */
+}
+
+h1 {
+    font-size: 2rem;
+    /* Taille de la police pour le titre principal */
+    line-height: 1.2;
+    /* Hauteur de ligne */
+    margin: 0 0 20px 0;
+    /* Marge (haut, droite, bas, gauche) */
+    font-weight: 700;
+    /* Graisse de la police (gras) */
+}
+
+.slogan {
+    font-size: 1.1rem;
+    /* Taille de la police pour le slogan */
+    font-weight: 400;
+    /* Graisse de la police (normal) */
+    margin-bottom: 25px;
+    /* Marge inférieure */
+}
+
+.instruction {
+    font-size: 1rem;
+    /* Taille de la police */
+    color: rgba(255, 255, 255, 0.8);
+    /* Couleur blanche avec opacité */
+    margin-bottom: 20px;
+    /* Marge inférieure */
+}
+
+/* --- Formulaire et Alignement --- */
+.formulaire-email {
+    display: flex;
+    /* Active Flexbox */
+    flex-direction: row;
+    /* Oriente les éléments enfants en ligne (par défaut) */
+    gap: 0;
+    /* Espace entre les éléments enfants */
+    margin: 0 auto;
+    /* Centre horizontalement le bloc */
+    max-width: 500px;
+    /* Largeur maximale */
+    border-radius: 0;
+    /* Désactive l'arrondi des coins */
+    overflow: hidden;
+    /* Masque le contenu qui dépasse (utile pour les coins non arrondis) */
+}
+
+#email-address {
+    flex-grow: 1;
+    /* Permet au champ de prendre tout l'espace restant dans le conteneur Flexbox */
+    padding: 15px;
+    /* Rembourrage intérieur */
+    font-size: 16px;
+    /* Taille de la police */
+    border: none;
+    /* Supprime la bordure */
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Couleur de fond (blanc semi-transparent) */
+    color: white;
+    /* Couleur du texte saisi */
+    border-radius: 4px;
+    /* Arrondit les coins */
+}
+
+#email-address::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    /* Couleur du texte de l'espace réservé */
+}
+
+.btn-inscription {
+    padding: 15px 25px;
+    /* Rembourrage intérieur */
+    font-size: 16px;
+    /* Taille de la police */
+    font-weight: bold;
+    /* Graisse de la police (gras) */
+    color: rgb(0, 0, 0);
+    /* Couleur du texte (noir) */
+    background-color: #05d6e8;
+    /* Couleur de fond (cyan/bleu clair) */
+    border: none;
+    /* Supprime la bordure */
+    border-radius: 4px;
+    /* Arrondit les coins */
+    cursor: pointer;
+    /* Change le curseur en pointeur pour indiquer que l'élément est cliquable */
+    transition: background-color 0.2s;
+    /* Anime en douceur le changement de couleur de fond */
+}
+
+.btn-inscription:hover {
+    background-color: #02D6E8;
+    /* Assombrit légèrement le fond au survol */
+}
+
+/* --- Texte d'offre et Notes de bas de page (Textes grisés) --- */
+.offre-speciale {
+    font-size: 12px;
+    /* Taille de la police */
+    color: rgba(255, 255, 255, 0.6);
+    /* Couleur blanche semi-transparente */
+    margin-top: 25px;
+    /* Marge supérieure */
+    margin-bottom: 10px;
+    /* Marge inférieure */
+}
+
+.notes-bas-de-page {
+    margin-top: 15px;
+    /* Marge supérieure */
+    font-size: 11px;
+    /* Taille de la police */
+    color: rgba(255, 255, 255, 0.5);
+    /* Couleur blanche très transparente */
+}
+
+.notes-bas-de-page p {
+    font-size: 11px;
+    /* Taille de la police */
+    margin: 3px 0;
+    /* Marge verticale */
+}
+
+/* --- Flèche de défilement --- */
+.scroll-down {
+    position: absolute;
+    /* Positionne l'élément par rapport au parent positionné le plus proche */
+    bottom: 20px;
+    /* Positionne à 20px du bas du parent */
+    left: 50%;
+    /* Déplace le coin gauche à 50% de la largeur du parent */
+    transform: translateX(-50%);
+    /* Déplace l'élément de 50% de sa propre largeur vers la gauche (pour le centrer horizontalement) */
+    z-index: 2;
+    /* Ordre d'empilement */
+}
+
+.arrow-down {
+    display: block;
+    /* Affiche l'élément comme un bloc (pour appliquer des transformations) */
+    font-size: 40px;
+    /* Taille de la police (pour l'icône de flèche) */
+    line-height: 1;
+    /* Hauteur de ligne */
+    color: white;
+    /* Couleur de la flèche */
+    text-decoration: none;
+    /* Supprime le soulignement */
+    opacity: 0.8;
+    /* Opacité (légèrement transparente) */
+    transition: opacity 0.3s;
+    /* Anime l'opacité au survol */
+    animation: bounce 2s infinite;
+    /* Applique l'animation 'bounce' (rebond) en boucle infinie (2 secondes par cycle) */
+}
+
+.arrow-down:hover {
+    opacity: 1;
+    /* Opacité maximale au survol */
+}
+
+@keyframes bounce {
+
+    /* Définit l'animation nommée 'bounce' */
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+        /* À ces étapes, l'élément est à sa position normale (déplacement vertical de 0) */
+    }
+
+    40% {
+        transform: translateY(-10px);
+        /* L'élément monte de 10px */
+    }
+
+    60% {
+        transform: translateY(-5px);
+        /* L'élément monte de 5px */
+    }
+}
+
+/* --- SECTION SECONDAIRE "SEULEMENT SUR DISNEY+" --- */
+.disney {
+    background-image: url(img/original_4.jpeg);
+    /* Image de fond de la section */
+    background-size: cover;
+    /* Ajuste la taille de l'image de fond */
+    background-position: center;
+    /* Centre l'image de fond */
+    background-repeat: no-repeat;
+    /* Empêche la répétition de l'image de fond */
+    min-height: 100vh;
+    /* Hauteur minimale de 100% de la fenêtre */
+    display: flex;
+    /* Active Flexbox */
+    align-items: flex-start;
+    /* Aligne les éléments enfants au début de l'axe vertical */
+    padding: 100px 20px 20px 20px;
+    /* Rembourrage (haut, droite, bas, gauche) */
+    position: relative;
+    /* Définit le contexte de positionnement */
+    color: white;
+    /* Couleur du texte */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Couleur de fond (noir semi-transparent) */
+    background-blend-mode: multiply;
+    /* Mode de fusion */
+}
+
+.disney>div {
+    max-width: 400px;
+    /* Largeur maximale du conteneur de texte dans la section Disney */
+    padding: 0;
+    /* Supprime le rembourrage */
+    text-align: left;
+    /* Aligne le texte à gauche */
+}
+
+.disney h2 {
+    font-size: 2rem;
+    /* Taille de la police */
+    line-height: 1.1;
+    /* Hauteur de ligne */
+    font-weight: 700;
+    /* Graisse de la police (gras) */
+    margin-bottom: 20px;
+    /* Marge inférieure */
+}
+
+.disney p {
+    font-size: 0.95rem;
+    /* Taille de la police */
+    line-height: 1.5;
+    /* Hauteur de ligne */
+    margin-bottom: 15px;
+    /* Marge inférieure */
+    color: rgba(255, 255, 255, 0.9);
+    /* Couleur du texte (blanc presque opaque) */
+}
+
+/* --- SECTION ABONNEMENT --- */
+.Abonnement {
+    background-color: #040714;
+    /* Couleur de fond */
+    color: #fff;
+    /* Couleur du texte */
+    padding: 60px 20px;
+    /* Rembourrage vertical et horizontal */
+    font-family: Arial, sans-serif;
+    /* Police de caractères */
+}
+
+.abonnement-container {
+    max-width: 1000px;
+    /* Largeur maximale du conteneur */
+    margin: 0 auto;
+    /* Centre horizontalement le conteneur */
+}
+
+.Abonnement h2 {
+    font-size: 2rem;
+    /* Taille de la police */
+    font-weight: 700;
+    /* Graisse de la police (gras) */
+    text-align: center;
+    /* Centre le texte */
+    margin-bottom: 40px;
+    /* Marge inférieure */
+}
+
+/* ---- TABLEAU D'ABONNEMENT ----*/
+.table-wrapper {
+    overflow-x: auto;
+    /* Ajoute une barre de défilement horizontale si le contenu dépasse (utile pour les petits écrans) */
+    margin-bottom: 30px;
+    /* Marge inférieure */
+}
+
+table {
+    width: 100%;
+    /* Définit la largeur à 100% */
+    border-collapse: collapse;
+    /* Fusionne les bordures des cellules adjacentes */
+    background-color: transparent;
+    /* Rend le fond transparent */
+    text-align: center;
+    /* Centre le texte dans les cellules */
+    min-width: 600px;
+    /* Largeur minimale du tableau (pour éviter qu'il ne soit trop écrasé sur mobile) */
+}
+
+thead th {
+    padding: 15px 10px;
+    /* Rembourrage des en-têtes de colonne */
+    border-bottom: 2px solid #333;
+    /* Bordure inférieure */
+    font-size: 1em;
+    /* Taille de la police */
+    font-weight: 600;
+    /* Graisse de la police */
+}
+
+tbody td {
+    padding: 15px 10px;
+    /* Rembourrage des cellules du corps du tableau */
+    border-top: 1px solid #333;
+    /* Bordure supérieure */
+    font-size: 0.9rem;
+    /* Taille de la police */
+    color: #fff;
+    /* Couleur du texte */
+}
+
+tbody td:first-child {
+    text-align: left;
+    /* Aligne la première colonne (caractéristique) à gauche */
+    font-weight: 400;
+    /* Graisse de la police (normal) */
+    color: #ccc;
+    /* Couleur de texte gris clair */
+}
+
+table th.premium-col,
+table td:nth-child(4) {
+    background-color: #1a1e23;
+    /* Couleur de fond pour la colonne "Premium" (4ème colonne) */
+}
+
+.price-row td {
+    font-size: 1em;
+    /* Taille de la police */
+    font-weight: 600;
+    /* Graisse de la police */
+    padding: 20px 10px;
+    /* Rembourrage */
+}
+
+.feature-check {
+    color: #ffffff;
+    /* Couleur du texte/icône (blanc) */
+    font-size: 1.1em;
+    /* Taille de la police */
+    font-weight: bold;
+    /* Graisse de la police (gras) */
+}
+
+/* --- NOTES SOUS LE TABLEAU --- */
+.notes {
+    text-align: left;
+    /* Aligne le texte à gauche */
+    margin-top: 20px;
+    /* Marge supérieure */
+}
+
+.note-simple {
+    font-size: 0.9em;
+    /* Taille de la police */
+    color: #AAA;
+    /* Couleur de texte gris */
+    margin-bottom: 15px;
+    /* Marge inférieure */
+}
+
+.note-detail {
+    font-size: 0.75em;
+    /* Taille de la police (plus petite) */
+    line-height: 1.4;
+    /* Hauteur de ligne */
+    color: #777;
+    /* Couleur de texte gris foncé */
+}
+
+.note-detail a {
+    color: #ffffff;
+    /* Couleur du lien (blanc) */
+    text-decoration: underline;
+    /* Souligne le lien */
+}
+
+/* --- SECTION ADS --- */
+.ADS {
+    background-color: #040714;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    padding: 60px 20px;
+    /* Rembourrage */
+    text-align: center;
+    /* Centre le texte */
+}
+
+.ADS h3 {
+    font-size: 2rem;
+    /* Taille de la police */
+    font-weight: 700;
+    /* Graisse de la police (gras) */
+    margin: 0 0 10px 0;
+    /* Marge inférieure */
+}
+
+.ADS>p {
+    font-size: 1.1rem;
+    /* Taille de la police */
+    color: #CCC;
+    /* Couleur de texte gris clair */
+    margin: 0 auto 40px auto;
+    /* Centre horizontalement avec marge inférieure */
+    max-width: 600px;
+    /* Largeur maximale */
+}
+
+.benefits-row {
+    display: flex;
+    /* Active Flexbox */
+    flex-direction: column;
+    /* Oriente les éléments enfants en colonne (par défaut sur mobile) */
+    gap: 40px;
+    /* Espace entre les éléments flexibles */
+    max-width: 1200px;
+    /* Largeur maximale */
+    margin: 0 auto;
+    /* Centre horizontalement */
+}
+
+.benefit-item {
+    text-align: center;
+    /* Centre le texte */
+}
+
+.benefit-item img {
+    width: 60px;
+    /* Largeur de l'image */
+    height: auto;
+    /* Hauteur automatique (pour conserver le ratio) */
+    margin-bottom: 15px;
+    /* Marge inférieure */
+}
+
+.benefit-item p:first-of-type {
+    font-size: 1.1rem;
+    /* Taille de la police */
+    font-weight: 600;
+    /* Graisse de la police */
+    margin: 0 0 10px 0;
+    /* Marge inférieure */
+}
+
+.benefit-item .detail {
+    font-size: 0.9rem;
+    /* Taille de la police */
+    color: #AAA;
+    /* Couleur de texte gris */
+    line-height: 1.4;
+    /* Hauteur de ligne */
+}
+
+/* --- SECTION FAQ --- */
+.FAQ {
+    background-color: #040714;
+    /* Couleur de fond */
+    color: #c0c0c0;
+    /* Couleur du texte gris */
+    font-family: "Inspire", sans-serif;
+    /* Police de caractères */
+    padding: 60px 20px;
+    /* Rembourrage */
+    text-align: center;
+    /* Centre le texte */
+}
+
+.FAQ h4 {
+    font-size: 2rem;
+    /* Taille de la police */
+    font-weight: 700;
+    /* Graisse de la police (gras) */
+    color: white;
+    /* Couleur du titre (blanc) */
+    margin: 0 0 40px 0;
+    /* Marge inférieure */
+}
+
+.faq-liste {
+    max-width: 1200px;
+    /* Largeur maximale */
+    margin: 0 auto;
+    /* Centre horizontalement */
+}
+
+.FAQ details {
+    margin-bottom: 15px;
+    /* Marge inférieure */
+    background-color: #13151D;
+    /* Couleur de fond des éléments de la FAQ */
+    border-radius: 4px;
+    /* Arrondit les coins */
+    border: none;
+    /* Supprime la bordure */
+    padding: 0 20px;
+    /* Rembourrage horizontal */
+    overflow: hidden;
+    /* Masque le contenu qui dépasse */
+    text-align: left;
+    /* Aligne le texte à gauche */
+}
+
+summary {
+    display: flex;
+    /* Active Flexbox */
+    justify-content: space-between;
+    /* Espace les éléments (titre et icône +/-) */
+    align-items: center;
+    /* Centre les éléments verticalement */
+    font-size: 16px;
+    /* Taille de la police */
+    line-height: 1.4;
+    /* Hauteur de ligne */
+    font-weight: 400;
+    /* Graisse de la police */
+    color: #c0c0c0;
+    /* Couleur du texte */
+    cursor: pointer;
+    /* Change le curseur en pointeur */
+    padding: 20px 0;
+    /* Rembourrage vertical */
+    list-style: none;
+    /* Supprime le marqueur de liste par défaut (sur certains navigateurs) */
+    user-select: none;
+    /* Empêche la sélection du texte */
+    outline: none;
+    /* Supprime le contour de focus */
+    transition: color 0.2s ease;
+    /* Anime la couleur du texte */
+}
+
+summary::after {
+    content: '+';
+    /* Ajoute un symbole '+' après le texte de l'élément */
+    font-size: 20px;
+    /* Taille de la police */
+    font-weight: 300;
+    /* Graisse de la police (léger) */
+    color: #c0c0c0;
+    /* Couleur du symbole */
+    line-height: 1;
+    /* Hauteur de ligne */
+    margin-left: 15px;
+    /* Marge à gauche */
+    transition: transform 0.3s ease, color 0.2s ease;
+    /* Anime la rotation et la couleur */
+}
+
+details[open] summary::after {
+    /* Style appliqué lorsque l'élément 'details' est ouvert */
+    content: '−';
+    /* Change le symbole en '−' (moins) */
+    color: white;
+    /* Change la couleur du symbole en blanc */
+}
+
+.reponse-contenu {
+    padding: 20px 0;
+    /* Rembourrage vertical */
+    border-top: 1px solid #333;
+    /* Bordure supérieure */
+    font-size: 16px;
+    /* Taille de la police */
+    line-height: 1.5;
+    /* Hauteur de ligne */
+    font-weight: 400;
+    /* Graisse de la police */
+    color: #c0c0c0;
+    /* Couleur du texte */
+    text-align: left;
+    /* Aligne le texte à gauche */
+}
+
+.reponse-contenu p,
+.reponse-contenu ul,
+.reponse-contenu ol {
+    margin-top: 0;
+    /* Supprime la marge supérieure */
+    margin-bottom: 15px;
+    /* Marge inférieure */
+}
+
+.reponse-contenu ul,
+.reponse-contenu ol {
+    list-style-position: outside;
+    /* Positionne les puces/numéros à l'extérieur du bloc de contenu */
+    padding-left: 20px;
+    /* Rembourrage à gauche */
+    margin-bottom: 20px;
+    /* Marge inférieure */
+}
+
+.reponse-contenu li {
+    padding-bottom: 8px;
+    /* Rembourrage inférieur */
+    margin-left: 0;
+    /* Supprime la marge gauche */
+}
+
+.reponse-contenu a {
+    color: #ffffff;
+    /* Couleur du lien (blanc) */
+    text-decoration: none;
+    /* Supprime le soulignement */
+    border-bottom: 1px solid #ffffff;
+    /* Ajoute un soulignement de bordure */
+    transition: border-color 0.2s ease;
+    /* Anime la couleur de la bordure */
+}
+
+.reponse-contenu a:hover {
+    border-bottom-color: transparent;
+    /* Rend la bordure transparente au survol (effet de suppression du soulignement) */
+}
+
+/* --- SECTION APPAREILS --- */
+.appareils {
+    background-color: #040714;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    padding: 60px 20px;
+    /* Rembourrage */
+    text-align: center;
+    /* Centre le texte */
+}
+
+.appareils h2 {
+    font-size: 2rem;
+    /* Taille de la police */
+    font-weight: 700;
+    /* Graisse de la police (gras) */
+    margin-bottom: 50px;
+    /* Marge inférieure */
+}
+
+.appareils-row {
+    display: grid;
+    /* Active le modèle de grille (Grid) */
+    grid-template-columns: 1fr;
+    /* Définit une seule colonne de taille flexible (1 fraction de l'espace disponible) */
+    gap: 40px;
+    /* Espace entre les éléments de la grille */
+    max-width: 1200px;
+    /* Largeur maximale */
+    margin: 0 auto;
+    /* Centre horizontalement */
+}
+
+.appareil-item {
+    text-align: center;
+    /* Centre le texte */
+}
+
+.appareil-icon {
+    width: 120px;
+    /* Largeur de l'icône */
+    height: auto;
+    /* Hauteur automatique */
+    margin: 0 auto 20px auto;
+    /* Marge inférieure et centrage horizontal */
+}
+
+.appareil-item h3 {
+    font-size: 1.2rem;
+    /* Taille de la police */
+    font-weight: 600;
+    /* Graisse de la police */
+    margin: 0 0 20px 0;
+    /* Marge inférieure */
+}
+
+.liste-appareils {
+    list-style: none;
+    /* Supprime les puces de liste */
+    padding: 0;
+    /* Supprime le rembourrage par défaut de la liste */
+    margin: 0;
+    /* Supprime la marge par défaut de la liste */
+}
+
+.liste-appareils li {
+    font-size: 0.95rem;
+    /* Taille de la police */
+    line-height: 1.8;
+    /* Hauteur de ligne */
+    color: #AAA;
+    /* Couleur du texte (gris) */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #040714;
+    /* Couleur de fond */
+    color: #AAA;
+    /* Couleur du texte (gris) */
+    padding: 40px 20px;
+    /* Rembourrage */
+    font-size: 14px;
+    /* Taille de la police */
+}
+
+.footer-container {
+    max-width: 1200px;
+    /* Largeur maximale */
+    margin: 0 auto;
+    /* Centre horizontalement */
+    text-align: center;
+    /* Centre le texte */
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+    /* Marge inférieure */
+}
+
+.footer-logo img {
+    width: 80px;
+    /* Largeur du logo */
+    height: auto;
+    /* Hauteur automatique */
+}
+
+.footer-links-row {
+    list-style: none;
+    /* Supprime les puces de liste */
+    padding: 0;
+    /* Supprime le rembourrage */
+    margin: 10px 0;
+    /* Marge verticale */
+    display: flex;
+    /* Active Flexbox */
+    flex-direction: column;
+    /* Oriente les éléments en colonne (par défaut sur mobile) */
+    gap: 10px;
+    /* Espace entre les éléments flexibles */
+    align-items: center;
+    /* Centre les éléments horizontalement */
+}
+
+.footer-links-row li {
+    padding: 0 12px;
+    /* Rembourrage horizontal */
+}
+
+.footer-links-row a {
+    color: #AAA;
+    /* Couleur du lien (gris) */
+    text-decoration: none;
+    /* Supprime le soulignement */
+    transition: color 0.2s;
+    /* Anime la couleur au survol */
+}
+
+.footer-links-row a:hover {
+    color: white;
+    /* Change la couleur en blanc au survol */
+}
+
+.language-selector {
+    position: relative;
+    /* Définit le contexte de positionnement pour le menu déroulant */
+}
+
+.language-toggle {
+    display: flex;
+    /* Active Flexbox */
+    align-items: center;
+    /* Centre verticalement */
+    justify-content: center;
+    /* Centre horizontalement */
+    font-weight: bold;
+    /* Graisse de la police (gras) */
+    color: white !important;
+    /* Force la couleur du texte à blanc (important pour surcharger) */
+    font-size: 14px;
+    /* Taille de la police */
+    text-decoration: none;
+    /* Supprime le soulignement */
+}
+
+.language-icon {
+    width: 20px;
+    /* Largeur de l'icône */
+    height: 20px;
+    /* Hauteur de l'icône */
+    margin-right: 8px;
+    /* Marge à droite */
+    filter: invert(1);
+    /* Inverse les couleurs (utile pour afficher une icône noire en blanc) */
+}
+
+.language-arrow {
+    width: 12px;
+    /* Largeur de l'icône */
+    height: 12px;
+    /* Hauteur de l'icône */
+    margin-left: 8px;
+    /* Marge à gauche */
+    filter: invert(1);
+    /* Inverse les couleurs */
+    transition: transform 0.3s ease;
+    /* Anime la transformation */
+}
+
+.language-dropdown {
+    display: none;
+    /* Masque le menu déroulant par défaut */
+    position: absolute;
+    /* Positionne par rapport au parent positionné (.language-selector) */
+    top: 100%;
+    /* Positionne en dessous du parent */
+    left: 50%;
+    /* Déplace le coin gauche à 50% */
+    transform: translateX(-50%);
+    /* Centre horizontalement */
+    background-color: #040714;
+    /* Couleur de fond */
+    border: 1px solid #444;
+    /* Bordure */
+    list-style: none;
+    /* Supprime les puces de liste */
+    padding: 0;
+    /* Supprime le rembourrage */
+    margin: 0;
+    /* Supprime la marge */
+    min-width: 120px;
+    /* Largeur minimale */
+    z-index: 100;
+    /* Ordre d'empilement (pour qu'il apparaisse au-dessus des autres éléments) */
+}
+
+.language-dropdown li {
+    padding: 8px 12px;
+    /* Rembourrage des éléments de liste */
+}
+
+.language-dropdown li a {
+    color: #AAA;
+    /* Couleur du lien */
+    text-decoration: none;
+    /* Supprime le soulignement */
+}
+
+.language-dropdown li a:hover {
+    color: white;
+    /* Change la couleur au survol */
+}
+
+.language-selector:hover .language-dropdown {
+    display: block;
+    /* Affiche le menu déroulant lorsque l'élément parent (.language-selector) est survolé */
+}
+
+.footer-note,
+.footer-copyright {
+    margin-top: 20px;
+    /* Marge supérieure */
+    font-size: 12px;
+    /* Taille de la police */
+    color: #777;
+    /* Couleur du texte (gris foncé) */
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablettes (768px et plus) */
+@media (min-width: 768px) {
+
+    /* Les styles s'appliquent lorsque la largeur de la fenêtre est d'au moins 768px */
+    h1 {
+        font-size: 2.5rem;
+        /* Augmente la taille du titre */
+    }
+
+    .formulaire-email {
+        flex-direction: row;
+        /* Oriente les éléments du formulaire en ligne */
+    }
+
+    #email-address {
+        border-radius: 4px 0 0 4px;
+        /* Arrondit seulement les coins gauche (pour se connecter au bouton sans espace) */
+    }
+
+    .btn-inscription {
+        border-radius: 0 4px 4px 0;
+        /* Arrondit seulement les coins droit (pour se connecter au champ email) */
+    }
+
+    .benefits-row {
+        flex-direction: row;
+        /* Oriente les éléments en ligne */
+        gap: 20px;
+        /* Espace entre les éléments */
+    }
+
+    .appareils-row {
+        grid-template-columns: repeat(2, 1fr);
+        /* Crée 2 colonnes de taille égale */
+    }
+
+    .footer-links-row {
+        flex-direction: row;
+        /* Oriente les liens en ligne */
+        justify-content: center;
+        /* Centre les liens */
+        flex-wrap: wrap;
+        /* Permet aux liens de passer à la ligne si nécessaire */
+    }
+}
+
+/* Ordinateurs (1024px et plus) */
+@media (min-width: 1024px) {
+
+    /* Les styles s'appliquent lorsque la largeur de la fenêtre est d'au moins 1024px */
+    .header-identification {
+        padding: 15px 30px;
+        /* Augmente le rembourrage horizontal de l'en-tête */
+    }
+
+    h1 {
+        font-size: 3rem;
+        /* Augmente la taille du titre */
+    }
+
+    .message-central {
+        margin-top: 10%;
+        /* Diminue la marge supérieure */
+    }
+
+    .disney {
+        padding-top: 150px;
+        /* Augmente le rembourrage supérieur */
+        padding-left: 5%;
+        /* Rembourrage à gauche */
+    }
+
+    .appareils-row {
+        grid-template-columns: repeat(4, 1fr);
+        /* Crée 4 colonnes de taille égale */
+    }
+
+    .faq-liste {
+        padding: 0 40px;
+        /* Rembourrage horizontal */
+    }
+
+    .FAQ details {
+        padding: 0 30px;
+        /* Rembourrage horizontal */
+    }
+
+    summary {
+        font-size: 18px;
+        /* Augmente la taille de la police */
+        padding: 25px 0;
+        /* Augmente le rembourrage vertical */
+    }
+
+    .reponse-contenu {
+        font-size: 18px;
+        /* Augmente la taille de la police */
+        padding: 25px 0;
+        /* Augmente le rembourrage vertical */
+    }
+}
+
+/* Grands écrans (1200px et plus) */
+@media (min-width: 1200px) {
+
+    /* Les styles s'appliquent lorsque la largeur de la fenêtre est d'au moins 1200px */
+    .contenu-principal {
+        padding: 0;
+        /* Supprime le rembourrage */
+    }
+
+    .benefits-row {
+        gap: 40px;
+        /* Espace entre les éléments */
+        padding: 0 40px;
+        /* Rembourrage horizontal */
+    }
+
+    .appareils-row {
+        padding: 0 20px;
+        /* Rembourrage horizontal */
+    }
+}
+
+/* Très petits mobiles (480px et moins) */
+@media (max-width: 480px) {
+
+    /* Les styles s'appliquent lorsque la largeur de la fenêtre est de 480px ou moins */
+    h1 {
+        font-size: 1.8rem;
+        /* Diminue la taille du titre */
+    }
+
+    .slogan {
+        font-size: 1rem;
+        /* Diminue la taille de la police */
+    }
+
+    .instruction {
+        font-size: 0.9rem;
+        /* Diminue la taille de la police */
+    }
+
+    .Abonnement h2,
+    .ADS h3,
+    .FAQ h4,
+    .appareils h2 {
+        font-size: 1.8rem;
+        /* Diminue la taille des titres de section */
+    }
+
+    .disney h2 {
+        font-size: 1.8rem;
+        /* Diminue la taille du titre */
+    }
+
+    .footer-links-row li {
+        padding: 5px 0;
+        /* Diminue le rembourrage vertical */
+    }
+
+    .language-toggle {
+        font-size: 13px;
+        /* Diminue la taille de la police */
+    }
+}
